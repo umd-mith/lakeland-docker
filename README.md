@@ -8,7 +8,7 @@ Extract the data:
 
     tar xvfz data/lakeland.tar.gz -C data
 
-Get the database configuration we will use:
+Set the database configuration we will use:
 
     cp config/db.ini data/lakeland/db.ini
 
