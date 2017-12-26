@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: someomeka
+      MYSQL_DATABASE: omekadblakeland
+      MYSQL_USER: omekausername
+      MYSQL_PASSWORD: omekapassword
+  apache:
+    depends_on:
+      - db
+    build:
+      context: apache/.
+    volumes:
+      - ./data/lakeland:/var/www/html
+    ports:
+      - "8000:80"
+    restart: always
